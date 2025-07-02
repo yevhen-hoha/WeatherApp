@@ -1,0 +1,42 @@
+// Mixin for box-shadow
+@mixin main-shadow {
+  box-shadow: $box-shadow-main;
+}
+
+@mixin card-shadow {
+  box-shadow: $box-shadow-card;
+}
+
+@mixin card-hover-shadow {
+  box-shadow: $box-shadow-card-hover;
+}
+
+@mixin chart-shadow {
+  box-shadow: $box-shadow-chart;
+}
+
+// Mixin for gradient backgrounds
+@mixin main-bg {
+  background: $main-bg-gradient;
+}
+
+@mixin card-bg {
+  background: $card-bg-gradient;
+}
+
+// Mixin for border radius
+@mixin main-radius {
+  border-radius: $border-radius-main;
+}
+
+@mixin card-radius {
+  border-radius: $border-radius-card;
+}
+
+@mixin btn-radius {
+  border-radius: $border-radius-btn;
+}
+
+@mixin chart-radius {
+  border-radius: $border-radius-chart;
+}

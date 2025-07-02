@@ -1,0 +1,75 @@
+@import "../variables";
+@import "../mixins";
+
+
+.card {
+  @include card-bg;
+  padding: $card-padding;
+  @include card-radius;
+  width: $card-width;
+  box-shadow: $box-shadow-card;
+  cursor: pointer;
+  transition: 0.22s cubic-bezier(0.4, 0.2, 0.2, 1);
+  color: $text-main;
+  border: 1.5px solid $border-main;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    transform: scale(1.04) translateY(-2px);
+    @include card-hover-shadow;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    h3 {
+      color: $accent-blue;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-shadow: $text-shadow;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      filter: drop-shadow(0 2px 12px $icon-glow);
+      background: rgba(34, 49, 63, 0.5);
+      border-radius: 50%;
+      padding: 0.2rem;
+      border: 2px solid $icon-border;
+      transition: transform 0.2s;
+      &:hover {
+        transform: scale(1.08) rotate(-6deg);
+        box-shadow: 0 4px 24px $icon-glow;
+      }
+    }
+  }
+  p {
+    font-size: 1.1rem;
+    color: $text-secondary;
+    margin-bottom: 0.2rem;
+    text-shadow: 0 1px 4px #111a;
+  }
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.7rem;
+    button {
+      padding: 0.32rem 0.8rem;
+      border: none;
+      @include btn-radius;
+      background: $button-gradient;
+      color: $primary-bg;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #7ed6df33;
+      transition: background 0.18s, color 0.18s;
+      &:hover {
+        background: $button-gradient-hover;
+        color: #fff;
+      }
+    }
+  }
+}

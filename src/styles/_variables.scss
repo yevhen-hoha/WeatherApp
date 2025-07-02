@@ -1,0 +1,35 @@
+// Color palette
+$primary-bg: #232526;
+$secondary-bg: #414345;
+$main-bg-gradient: linear-gradient(135deg, #181a1b 0%, #232526 100%);
+$card-bg-gradient: linear-gradient(135deg, #232526 0%, #414345 100%);
+$accent-blue: #7ed6df;
+$accent-blue2: #70a1ff;
+$accent-yellow: #f6e58d;
+$accent-red: #e74c3c;
+$text-main: #e0e6ed;
+$text-secondary: #b2bec3;
+$text-shadow: 0 2px 8px #222b;
+$border-main: #232526;
+$border-accent: #7ed6df;
+$box-shadow-main: 0 8px 32px 0 rgba(0,0,0,0.45);
+$box-shadow-card: 0 6px 24px rgba(0,0,0,0.35);
+$box-shadow-card-hover: 0 10px 32px #7ed6df33;
+$box-shadow-chart: 0 2px 12px 0 #000a;
+$input-bg: #232526;
+$input-bg-focus: #414345;
+$scrollbar-bg: #232526;
+$scrollbar-thumb: #414345;
+$button-gradient: linear-gradient(90deg, #7ed6df 0%, #70a1ff 100%);
+$button-gradient-hover: linear-gradient(90deg, #70a1ff 0%, #7ed6df 100%);
+$icon-glow: #7ed6df88;
+$icon-border: #7ed6df44;
+
+
+$border-radius-main: 20px;
+$border-radius-card: 16px;
+$border-radius-btn: 8px;
+$border-radius-chart: 12px;
+$card-width: 300px;
+$card-padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+$container-max-width: 1200px;
