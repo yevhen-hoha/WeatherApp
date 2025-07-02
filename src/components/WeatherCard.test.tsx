@@ -9,7 +9,7 @@ import { removeCity } from "../store/weather/weatherSlice";
 jest.mock("react-router-dom", () => ({
      ...jest.requireActual("react-router-dom"),
      useNavigate: jest.fn(),
-}));
+}));w
 
 jest.mock("../store/weather/weatherSlice", () => ({
      ...jest.requireActual("../store/weather/weatherSlice"),

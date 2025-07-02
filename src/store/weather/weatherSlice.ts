@@ -38,6 +38,23 @@ export const addCityWeather = createAsyncThunk(
   }
 );
 
+export const updateCityWeather = createAsyncThunk(
+  "weather/updateCityWeather",
+     async (cityName: string) => {
+     const data = await fetchCurrentWeather(cityName);
+
+     return {
+          id: data.id,
+          name: data.name,
+          temp: data.main.temp,
+          description: data.weather[0].description,
+          icon: data.weather[0].icon,
+          lat: data.coord.lat,
+          lon: data.coord.lon,
+     };
+  }
+);
+
 
 const weatherSlice = createSlice({
   name: "weather",
@@ -63,6 +80,22 @@ const weatherSlice = createSlice({
         state.loading = false;
       })
       .addCase(addCityWeather.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(updateCityWeather.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateCityWeather.fulfilled, (state, action: PayloadAction<CityWeather>) => {
+        const existingIndex = state.cities.findIndex(city => city.name.toLowerCase() === action.payload.name.toLowerCase());
+        if (existingIndex !== -1) {
+          state.cities[existingIndex] = action.payload;
+        }
+
+        state.loading = false;
+      })
+      .addCase(updateCityWeather.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });

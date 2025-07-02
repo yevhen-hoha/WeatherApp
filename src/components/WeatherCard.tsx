@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "../styles/components/WeatherCard.module.scss";
 import type { CityWeather } from "../store/weather/weatherSlice";
-import {removeCity } from "../store/weather/weatherSlice";
+import {removeCity, updateCityWeather } from "../store/weather/weatherSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store";
 
 interface Props {
   data: CityWeather;
 }
 
 const WeatherCard: React.FC<Props> = ({ data }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   return (
@@ -24,8 +25,9 @@ const WeatherCard: React.FC<Props> = ({ data }) => {
       </div>
       <p>{Math.round(data.temp)}°C – {data.description}</p>
       <div className={styles.actions}>
-        <button onClick={(e) => {e.stopPropagation(); dispatch(removeCity(data.name)); }}>
-          ❌ Видалити
+        <button className={styles.secondary} onClick={(e) => {e.stopPropagation(); dispatch(updateCityWeather(data.name))}}>Update</button>
+         <button onClick={(e) => {e.stopPropagation(); dispatch(removeCity(data.name)); }}>
+          ❌ Delete
         </button>
       </div>
     </div>

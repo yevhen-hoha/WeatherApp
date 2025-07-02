@@ -54,6 +54,7 @@
   .actions {
     display: flex;
     justify-content: flex-end;
+    gap: 0.5rem;
     margin-top: 0.7rem;
     button {
       padding: 0.32rem 0.8rem;
@@ -69,6 +70,24 @@
       &:hover {
         background: $button-gradient-hover;
         color: #fff;
+      }
+    }
+    .secondary {
+      margin-left: 0.7rem;
+      padding: 0.32rem 0.8rem;
+      border: 1.5px solid $accent-blue2;
+      background: transparent;
+      color: $accent-blue2;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      @include btn-radius;
+      box-shadow: none;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+      &:hover {
+        background: $accent-blue2;
+        color: #fff;
+        border-color: $accent-blue;
       }
     }
   }
