@@ -82,7 +82,7 @@ const weatherSlice = createSlice({
         }
         state.loading = false;
       })
-      .addCase(addCityWeather.rejected, (state, action) => {
+      .addCase(addCityWeather.rejected, (state) => {
         state.loading = false;
         state.error = "Cannot find city with that name. Please try again.";
 
