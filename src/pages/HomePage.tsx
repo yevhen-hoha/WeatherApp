@@ -30,6 +30,7 @@ export default function HomePage() {
            <h1>Weather App</h1>
            <Form></Form>
            <ul>
+               {cities.length === 0 && <p>No cities added yet</p>}
                 {cities.map((city: CityWeather) => (
                <WeatherCard key={city.id} data={city} />
                 ))}
