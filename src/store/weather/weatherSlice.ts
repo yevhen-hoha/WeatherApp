@@ -63,6 +63,9 @@ const weatherSlice = createSlice({
     removeCity(state, action: PayloadAction<string>) {
       state.cities = state.cities.filter((city) => city.name !== action.payload);
     },
+    clearError(state) {
+      state.error = null;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -81,7 +84,8 @@ const weatherSlice = createSlice({
       })
       .addCase(addCityWeather.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload as string;
+        state.error = "Cannot find city with that name. Please try again.";
+
       })
       .addCase(updateCityWeather.pending, (state) => {
         state.loading = true;

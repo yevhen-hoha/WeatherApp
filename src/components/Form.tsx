@@ -2,16 +2,23 @@ import React from 'react';
 import { addCityWeather } from '../store/weather/weatherSlice';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../store';
+import { toast } from 'react-toastify';
 export default function Form() {
   const dispatch = useDispatch<AppDispatch>();
      const [cityInput, setCityInput] = React.useState("");
   return (
     <form action="" onSubmit={(e) => {
                    e.preventDefault();
-                   if (cityInput.trim()) {
-                   dispatch(addCityWeather(cityInput.trim()));
+
+                  if (!cityInput.trim()) {
+                     // Do something if it won't run (input is empty)
+                     toast.dark("Please enter a city name.");
+                  }
+                    else {
+                    dispatch(addCityWeather(cityInput.trim()));
                    setCityInput("");
-           }}}>
+           }
+           }}>
                 <input
                    type="text"
                    value={cityInput}
