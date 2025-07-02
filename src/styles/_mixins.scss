@@ -1,4 +1,4 @@
-// Mixin for box-shadow
+
 @mixin main-shadow {
   box-shadow: $box-shadow-main;
 }
@@ -15,7 +15,6 @@
   box-shadow: $box-shadow-chart;
 }
 
-// Mixin for gradient backgrounds
 @mixin main-bg {
   background: $main-bg-gradient;
 }
@@ -24,7 +23,7 @@
   background: $card-bg-gradient;
 }
 
-// Mixin for border radius
+
 @mixin main-radius {
   border-radius: $border-radius-main;
 }

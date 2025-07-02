@@ -11,7 +11,7 @@ export default function Form() {
                    e.preventDefault();
 
                   if (!cityInput.trim()) {
-                     // Do something if it won't run (input is empty)
+
                      toast.dark("Please enter a city name.");
                   }
                     else {

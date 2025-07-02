@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchWeatherForecast } from "../services/weatherService"; // путь подставь по своему проекту
+import { fetchWeatherForecast } from "../services/weatherService";
 
 export const useCityHourly = (lat: number, lon: number) => {
   const [data, setData] = useState<{ dt: number; temp: number }[]>([]);

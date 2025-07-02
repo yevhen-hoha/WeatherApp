@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import Form from './Form';
 import { useDispatch } from 'react-redux';
 
-// Мокаем useDispatch
+
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useDispatch: jest.fn(),
