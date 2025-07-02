@@ -55,7 +55,9 @@ input, button, select, textarea {
   box-shadow: 0 2px 8px #0002;
   transition: background 0.18s, color 0.18s;
 }
-
+form {
+     margin-top: 20px;
+}
 input:focus, textarea:focus, select:focus {
   background: #414345;
   color: #fff;
